@@ -4,15 +4,15 @@ Write-Output `a" "
 $host.UI.RawUI.ForegroundColor = "Cyan"
 Write-Output `a"This version of Packager is approved to run on the following latest Dolphin version."
 Write-Output `a" "
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/Sys/Resources/NetplayVersion.txt' -OutFile 'NetplayVersion.txt'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/Sys/Resources/NetplayVersion.txt' -OutFile 'NetplayVersion.txt'
 Get-Content -Path ".\NetplayVersion.txt"
 Write-Output `a" "
 $host.UI.RawUI.ForegroundColor = "Green"
 Write-Output `a"The server reports the following versions as the latest."
 Write-Output `a"If versions match, you do not need to perform updates."
 Write-Output `a" "
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/Sys/Resources/PackagerVersion.txt' -OutFile 'PackagerVersion.txt'
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/Sys/Resources/GeckoVersion.txt' -OutFile 'GeckoVersion.txt'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/Sys/Resources/PackagerVersion.txt' -OutFile 'PackagerVersion.txt'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/Sys/Resources/GeckoVersion.txt' -OutFile 'GeckoVersion.txt'
 Get-Content -Path ".\PackagerVersion.txt"
 Get-Content -Path ".\GeckoVersion.txt"  
 Write-Output `a" "
@@ -23,12 +23,12 @@ Get-Content -Path ".\Sys\Resources\PackagerVersion.txt"
 Get-Content -Path ".\Sys\Resources\GeckoVersion.txt"
 Write-Output `a" "
 $host.UI.RawUI.ForegroundColor = "White"
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/Sys/Motd/win_Motd.txt' -OutFile 'win_Motd.txt'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/Sys/Motd/win_Motd.txt' -OutFile 'win_Motd.txt'
 Get-Content -Path ".\win_Motd.txt"
 Write-Output `a" "
 # Post Initialization
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/Sys/Resources/background.png' -OutFile 'background.png'
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/Sys/Resources/karonline.ico' -OutFile 'karonline.ico'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/Sys/Resources/background.png' -OutFile 'background.png'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/Sys/Resources/karonline.ico' -OutFile 'karonline.ico'
 move-Item "background.png" -Destination ".\Sys\Resources" -force
 move-Item "karonline.ico" -Destination ".\Sys\Resources" -force
 Remove-Item ".\PackagerVersion.txt" -force
@@ -86,15 +86,15 @@ $Button.Add_Click(
 {
 
 [System.Windows.MessageBox]::Show('We will now Patch Dolphin and reset settings to default/netplay optimized.')
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/Sys/Resources/GeckoVersion.txt' -OutFile 'GeckoVersion.txt'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/Sys/Resources/GeckoVersion.txt' -OutFile 'GeckoVersion.txt'
 move-Item "GeckoVersion.txt" -Destination ".\Sys\Resources" -force
 Set-Location -Path "C:\Users\$env:UserName\Documents\Dolphin Emulator\GameSettings"
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/User/Gamesettings/GKYE01.ini' -OutFile 'GKYE01.ini'
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/User/Gamesettings/KHPE01.ini' -OutFile 'KHPE01.ini'
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/User/Gamesettings/modifier_guide.txt' -OutFile 'modifier_guide.txt'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/User/Gamesettings/GKYE01.ini' -OutFile 'GKYE01.ini'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/User/Gamesettings/KHPE01.ini' -OutFile 'KHPE01.ini'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/User/Gamesettings/modifier_guide.txt' -OutFile 'modifier_guide.txt'
 Set-Location -Path "C:\Users\$env:UserName\Documents\Dolphin Emulator\Config"
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/Sys/Config/Dolphin.ini' -OutFile 'Dolphin.ini'
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/Sys/Config/GFX.ini' -OutFile 'GFX.ini'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/Sys/Config/Dolphin.ini' -OutFile 'Dolphin.ini'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/Sys/Config/GFX.ini' -OutFile 'GFX.ini'
 [System.Windows.MessageBox]::Show('Kirby Air Ride can now be played online.','Patch Success')
 stop-process -Id $PID
 
@@ -113,8 +113,8 @@ $Button.Add_Click(
 {
 
 [System.Windows.MessageBox]::Show('Attempting to update Packager content.','Packager Update Notice')
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/Packager.ps1' -OutFile 'Packager.ps1'
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/Sys/Resources/PackagerVersion.txt' -OutFile 'PackagerVersion.txt'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/Packager.ps1' -OutFile 'Packager.ps1'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/Sys/Resources/PackagerVersion.txt' -OutFile 'PackagerVersion.txt'
 move-Item "PackagerVersion.txt" -Destination ".\Sys\Resources" -force
 [System.Windows.MessageBox]::Show('Packager has been updated.','Update Success')
 stop-process -Id $PID
@@ -178,12 +178,12 @@ Set-Location -Path User\Gamesettings
 copy-Item "GKYE01.ini" -Destination $selectedfolder
 copy-Item "KHPE01.ini" -Destination $selectedfolder
 [System.Windows.MessageBox]::Show('Press OK to update Gecko Codes and exit Packager.','Gecko Backup and Update Notice')
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/Sys/Resources/GeckoVersion.txt' -OutFile 'GeckoVersion.txt'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/Sys/Resources/GeckoVersion.txt' -OutFile 'GeckoVersion.txt'
 move-Item "GeckoVersion.txt" -Destination ".\Sys\Resources" -force
 Set-Location -Path "C:\Users\$env:UserName\Documents\Dolphin Emulator\GameSettings"
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/User/Gamesettings/GKYE01.ini' -OutFile 'GKYE01.ini'
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/User/Gamesettings/KHPE01.ini' -OutFile 'KHPE01.ini'
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/EternalllZM/Packager/main/User/Gamesettings/modifier_guide.txt' -OutFile 'modifier_guide.txt'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/User/Gamesettings/GKYE01.ini' -OutFile 'GKYE01.ini'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/User/Gamesettings/KHPE01.ini' -OutFile 'KHPE01.ini'
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/sonicboom0075/PackagerMirror/master/User/Gamesettings/modifier_guide.txt' -OutFile 'modifier_guide.txt'
 [System.Windows.MessageBox]::Show('Gecko Codes Updated.','Gecko Codes Update')
 stop-process -Id $PID
 
